@@ -118,9 +118,8 @@ class LaravelDoctrineServiceProvider extends ServiceProvider
 
     /**
      * Map Laravel's to Doctrine's database config
-     *
      * @param $config
-     * @throws Exception
+     * @throws \Exception
      * @return array
      */
     private function getDatabaseConfig($config)
