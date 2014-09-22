@@ -1,9 +1,21 @@
 <?php namespace Mitch\LaravelDoctrine;
 
+use Doctrine\ORM\ORMException;
+use Illuminate\Contracts\Container\Container;
 use Doctrine\Common\Persistence\AbstractManagerRegistry;
 
 final class IlluminateRegistry extends AbstractManagerRegistry
 {
+    /**
+     * @var Container
+     */
+    private $container;
+
+    public function __construct(Container $container, array $connections, array $entityManagers, $defaultConnection, $defaultEntityManager)
+    {
+        $this->container = $container;
+        parent::__construct('ORM', $connections, $entityManagers, $defaultConnection, $defaultEntityManager, 'Doctrine\ORM\Proxy\Proxy');
+    }
 
     /**
      * Fetches/creates the given services.
@@ -13,7 +25,7 @@ final class IlluminateRegistry extends AbstractManagerRegistry
      */
     protected function getService($name)
     {
-        // TODO: Implement getService() method.
+        return $this->container->make($name);
     }
 
     /**
@@ -24,17 +36,28 @@ final class IlluminateRegistry extends AbstractManagerRegistry
      */
     protected function resetService($name)
     {
-        // TODO: Implement resetService() method.
+        return $this->container->bind($name, null);
     }
 
     /**
      * Resolves a registered namespace alias to the full namespace.
      * This method looks for the alias in all registered object managers.
      * @param string $alias The alias.
+     * @throws ORMException
      * @return string The full namespace.
      */
     public function getAliasNamespace($alias)
     {
-        // TODO: Implement getAliasNamespace() method.
+        foreach (array_keys($this->getManagers()) as $name)
+            $this->tryRetrievingEntityManager($name, $alias);
+
+        throw ORMException::unknownEntityNamespace($alias);
+    }
+
+    private function tryRetrievingEntityManager($name, $alias)
+    {
+        try {
+            return $this->getManager($name)->getConfiguration()->getEntityNamespace($alias);
+        } catch (ORMException $e) {}
     }
 }
