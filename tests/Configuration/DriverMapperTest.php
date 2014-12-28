@@ -1,14 +1,14 @@
 <?php namespace Tests\Configuration;
 
-use Mitch\LaravelDoctrine\Configuration\DriverMapper;
+use Wota\LaravelDoctrine\Configuration\DriverMapper;
 use Mockery as m;
 
 class DriverMapperTest extends \PHPUnit_Framework_TestCase
 {
 	public function testUsageOfCorrectConfigurationMapper()
 	{
-		$mockMapper1 = m::mock('Mitch\LaravelDoctrine\Configuration\Mapper');
-		$mockMapper2 = m::mock('Mitch\LaravelDoctrine\Configuration\Mapper');
+		$mockMapper1 = m::mock('Wota\LaravelDoctrine\Configuration\Mapper');
+		$mockMapper2 = m::mock('Wota\LaravelDoctrine\Configuration\Mapper');
 
 		$driverMapper = new DriverMapper('some driver');
 

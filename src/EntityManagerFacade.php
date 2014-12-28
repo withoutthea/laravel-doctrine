@@ -1,4 +1,4 @@
-<?php namespace Mitch\LaravelDoctrine; 
+<?php namespace Wota\LaravelDoctrine;
 
 use Illuminate\Support\Facades\Facade;
 

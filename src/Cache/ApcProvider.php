@@ -1,4 +1,4 @@
-<?php namespace Mitch\LaravelDoctrine\Cache;
+<?php namespace Wota\LaravelDoctrine\Cache;
 
 use Doctrine\Common\Cache\ApcCache;
 

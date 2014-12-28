@@ -1,7 +1,7 @@
 <?php namespace Tests\Configuration;
 
 use Illuminate\Support\Facades\Facade;
-use Mitch\LaravelDoctrine\Configuration\SqliteMapper;
+use Wota\LaravelDoctrine\Configuration\SqliteMapper;
 use Mockery as m;
 use Tests\Stubs\ApplicationStub;
 

@@ -1,4 +1,4 @@
-<?php namespace Mitch\LaravelDoctrine\Console;
+<?php namespace Wota\LaravelDoctrine\Console;
 
 use Illuminate\Console\Command;
 use Doctrine\ORM\Tools\SchemaTool;

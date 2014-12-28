@@ -1,10 +1,8 @@
 # Doctrine 2 for Laravel
 
-[![Latest Stable Version](https://poser.pugx.org/mitchellvanw/laravel-doctrine/version.png)](https://packagist.org/packages/mitchellvanw/laravel-doctrine)
-[![License](https://poser.pugx.org/mitchellvanw/laravel-doctrine/license.png)](https://packagist.org/packages/mitchellvanw/laravel-doctrine)
-[![Total Downloads](https://poser.pugx.org/mitchellvanw/laravel-doctrine/downloads.png)](https://packagist.org/packages/mitchellvanw/laravel-doctrine)
+Forked from mitchellvanw/laravel-doctrine
 
-A Doctrine 2 implementation that melts with Laravel 4.
+A Doctrine 2 implementation that melts with Laravel 5.
 
 ## Documentation
 
@@ -54,13 +52,13 @@ php composer.phar update
 Once the package has been installed you'll need to add the service provider. Open your `app/config/app.php` configuration file, and add a new item to the `providers` array.
 
 ```php
-'Mitch\LaravelDoctrine\LaravelDoctrineServiceProvider'
+'Wota\LaravelDoctrine\LaravelDoctrineServiceProvider'
 ```
 
 After This you'll need to add the facade. Open your `app/config/app.php` configuration file, and add a new item to the `aliases` array.
 
 ```php
-'EntityManager' => 'Mitch\LaravelDoctrine\EntityManagerFacade'
+'EntityManager' => 'Wota\LaravelDoctrine\EntityManagerFacade'
 ```
 
 It's recommended to publish the package configuration.

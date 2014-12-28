@@ -1,6 +1,6 @@
 <?php namespace Tests\Configuration;
 
-use Mitch\LaravelDoctrine\Configuration\SqlMapper;
+use Wota\LaravelDoctrine\Configuration\SqlMapper;
 use Mockery as m;
 
 class SqlMapperTest extends \PHPUnit_Framework_TestCase

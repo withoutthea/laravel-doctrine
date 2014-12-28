@@ -1,4 +1,4 @@
-<?php namespace Mitch\LaravelDoctrine\Traits;
+<?php namespace Wota\LaravelDoctrine\Traits;
 
 use Doctrine\ORM\Mapping AS ORM;
 use DateTime;

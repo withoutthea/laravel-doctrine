@@ -1,4 +1,4 @@
-<?php namespace Mitch\LaravelDoctrine\Configuration;
+<?php namespace Wota\LaravelDoctrine\Configuration;
 
 class SqliteMapper implements Mapper
 {

@@ -1,4 +1,4 @@
-<?php namespace Mitch\LaravelDoctrine;
+<?php namespace Wota\LaravelDoctrine;
 
 use App;
 use Doctrine\ORM\EntityManagerInterface;
@@ -9,12 +9,12 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\Common\EventManager;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Support\ServiceProvider;
-use Mitch\LaravelDoctrine\Cache;
-use Mitch\LaravelDoctrine\Configuration\DriverMapper;
-use Mitch\LaravelDoctrine\Configuration\SqlMapper;
-use Mitch\LaravelDoctrine\Configuration\SqliteMapper;
-use Mitch\LaravelDoctrine\EventListeners\SoftDeletableListener;
-use Mitch\LaravelDoctrine\Filters\TrashedFilter;
+use Wota\LaravelDoctrine\Cache;
+use Wota\LaravelDoctrine\Configuration\DriverMapper;
+use Wota\LaravelDoctrine\Configuration\SqlMapper;
+use Wota\LaravelDoctrine\Configuration\SqliteMapper;
+use Wota\LaravelDoctrine\EventListeners\SoftDeletableListener;
+use Wota\LaravelDoctrine\Filters\TrashedFilter;
 
 class LaravelDoctrineServiceProvider extends ServiceProvider
 {
@@ -26,8 +26,8 @@ class LaravelDoctrineServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->package('mitchellvanw/laravel-doctrine', 'doctrine', __DIR__ . '/..');
-        $this->extendAuthManager();
+        //$this->package('mitchellvanw/laravel-doctrine', 'doctrine', __DIR__ . '/..');
+        //$this->extendAuthManager();
     }
 
     /**
@@ -42,10 +42,10 @@ class LaravelDoctrineServiceProvider extends ServiceProvider
         $this->registerClassMetadataFactory();
 
         $this->commands([
-            'Mitch\LaravelDoctrine\Console\GenerateProxiesCommand',
-            'Mitch\LaravelDoctrine\Console\SchemaCreateCommand',
-            'Mitch\LaravelDoctrine\Console\SchemaUpdateCommand',
-            'Mitch\LaravelDoctrine\Console\SchemaDropCommand'
+            'Wota\LaravelDoctrine\Console\GenerateProxiesCommand',
+            'Wota\LaravelDoctrine\Console\SchemaCreateCommand',
+            'Wota\LaravelDoctrine\Console\SchemaUpdateCommand',
+            'Wota\LaravelDoctrine\Console\SchemaDropCommand'
         ]);
     }
 
@@ -66,7 +66,7 @@ class LaravelDoctrineServiceProvider extends ServiceProvider
     public function registerCacheManager()
     {
         $this->app->bind(CacheManager::class, function ($app) {
-            $manager = new CacheManager($app['config']['doctrine::doctrine.cache']);
+            $manager = new CacheManager($app['config']['doctrine']);
             $manager->add(new Cache\ApcProvider);
             $manager->add(new Cache\MemcacheProvider);
             $manager->add(new Cache\RedisProvider);
@@ -79,7 +79,7 @@ class LaravelDoctrineServiceProvider extends ServiceProvider
     private function registerEntityManager()
     {
         $this->app->singleton(EntityManager::class, function ($app) {
-            $config = $app['config']['doctrine::doctrine'];
+            $config = $app['config']['doctrine'];
             $metadata = Setup::createAnnotationMetadataConfiguration(
                 $config['metadata'],
                 $app['config']['app.debug'],

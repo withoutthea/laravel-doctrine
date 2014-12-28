@@ -1,4 +1,4 @@
-<?php namespace Mitch\LaravelDoctrine;
+<?php namespace Wota\LaravelDoctrine;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
