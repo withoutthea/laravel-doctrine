@@ -1,4 +1,4 @@
-<?php namespace Wota\LaravelDoctrine\Cache;
+<?php namespace Mitch\LaravelDoctrine\Cache;
 
 use Doctrine\Common\Cache\RedisCache;
 use Redis;

@@ -1,4 +1,4 @@
-<?php namespace Wota\LaravelDoctrine;
+<?php namespace Mitch\LaravelDoctrine;
 
 use App;
 use Doctrine\ORM\EntityManagerInterface;
@@ -9,12 +9,12 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\Common\EventManager;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Support\ServiceProvider;
-use Wota\LaravelDoctrine\Cache;
-use Wota\LaravelDoctrine\Configuration\DriverMapper;
-use Wota\LaravelDoctrine\Configuration\SqlMapper;
-use Wota\LaravelDoctrine\Configuration\SqliteMapper;
-use Wota\LaravelDoctrine\EventListeners\SoftDeletableListener;
-use Wota\LaravelDoctrine\Filters\TrashedFilter;
+use Mitch\LaravelDoctrine\Cache;
+use Mitch\LaravelDoctrine\Configuration\DriverMapper;
+use Mitch\LaravelDoctrine\Configuration\SqlMapper;
+use Mitch\LaravelDoctrine\Configuration\SqliteMapper;
+use Mitch\LaravelDoctrine\EventListeners\SoftDeletableListener;
+use Mitch\LaravelDoctrine\Filters\TrashedFilter;
 
 class LaravelDoctrineServiceProvider extends ServiceProvider
 {
@@ -42,10 +42,10 @@ class LaravelDoctrineServiceProvider extends ServiceProvider
         $this->registerClassMetadataFactory();
 
         $this->commands([
-            'Wota\LaravelDoctrine\Console\GenerateProxiesCommand',
-            'Wota\LaravelDoctrine\Console\SchemaCreateCommand',
-            'Wota\LaravelDoctrine\Console\SchemaUpdateCommand',
-            'Wota\LaravelDoctrine\Console\SchemaDropCommand'
+            'Mitch\LaravelDoctrine\Console\GenerateProxiesCommand',
+            'Mitch\LaravelDoctrine\Console\SchemaCreateCommand',
+            'Mitch\LaravelDoctrine\Console\SchemaUpdateCommand',
+            'Mitch\LaravelDoctrine\Console\SchemaDropCommand'
         ]);
     }
 

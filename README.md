@@ -52,13 +52,13 @@ php composer.phar update
 Once the package has been installed you'll need to add the service provider. Open your `app/config/app.php` configuration file, and add a new item to the `providers` array.
 
 ```php
-'Wota\LaravelDoctrine\LaravelDoctrineServiceProvider'
+'Mitch\LaravelDoctrine\LaravelDoctrineServiceProvider'
 ```
 
 After This you'll need to add the facade. Open your `app/config/app.php` configuration file, and add a new item to the `aliases` array.
 
 ```php
-'EntityManager' => 'Wota\LaravelDoctrine\EntityManagerFacade'
+'EntityManager' => 'Mitch\LaravelDoctrine\EntityManagerFacade'
 ```
 
 It's recommended to publish the package configuration.

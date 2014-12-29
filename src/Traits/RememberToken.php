@@ -1,4 +1,4 @@
-<?php namespace Wota\LaravelDoctrine\Traits;
+<?php namespace Mitch\LaravelDoctrine\Traits;
 
 use Doctrine\ORM\Mapping AS ORM;
 

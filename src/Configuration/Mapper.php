@@ -1,4 +1,4 @@
-<?php namespace Wota\LaravelDoctrine\Configuration;
+<?php namespace Mitch\LaravelDoctrine\Configuration;
 
 interface Mapper
 {

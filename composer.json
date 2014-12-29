@@ -1,13 +1,13 @@
 {
-    "name": "withoutthea/laravel-doctrine",
-    "description": "The Doctrine 2 implementation that melts with Laravel 5",
-    "version": "0.0.1",
+    "name": "mitchellvanw/laravel-doctrine",
+    "description": "The Doctrine 2 implementation that melts with Laravel 4",
+    "version": "0.5.0",
     "keywords": ["doctrine", "doctrine 2", "orm", "laravel"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Nathan Loding",
-            "email": "nathan@withoutthea.com"
+            "name": "Mitchell van Wijngaarden",
+            "email": "mitchell@kooding.nl"
         }
     ],
     "require": {
@@ -16,14 +16,14 @@
         "doctrine/orm": "2.5.*",
         "doctrine/migrations": "1.*"
     },
-	"require-dev": {
-		"mockery/mockery": "dev-master",
-		"phpunit/phpunit": "3.7.*"
-	},
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "phpunit/phpunit": "3.7.*"
+    },
     "autoload": {
         "psr-4": {
-            "Wota\\LaravelDoctrine\\": "src/",
-	        "Tests\\": "tests/"
+            "Mitch\\LaravelDoctrine\\": "src/",
+            "Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev"

@@ -1,6 +1,6 @@
-<?php namespace Wota\LaravelDoctrine;
+<?php namespace Mitch\LaravelDoctrine;
 
-use Wota\LaravelDoctrine\Cache\Provider;
+use Mitch\LaravelDoctrine\Cache\Provider;
 
 class CacheManager
 {

@@ -1,4 +1,4 @@
-<?php  namespace Wota\LaravelDoctrine\Console;
+<?php  namespace Mitch\LaravelDoctrine\Console;
 
 use Doctrine\Common\Util\Debug;
 use Doctrine\ORM\EntityManagerInterface;

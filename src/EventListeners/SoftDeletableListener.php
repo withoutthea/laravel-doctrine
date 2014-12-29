@@ -1,4 +1,4 @@
-<?php namespace Wota\LaravelDoctrine\EventListeners;
+<?php namespace Mitch\LaravelDoctrine\EventListeners;
 
 use Doctrine\ORM\Event\OnFlushEventArgs;
 use DateTime;
@@ -30,6 +30,6 @@ class SoftDeletableListener
 
     private function isSoftDeletable($entity)
     {
-        return array_key_exists('Wota\LaravelDoctrine\Traits\SoftDeletes', class_uses($entity));
+        return array_key_exists('Mitch\LaravelDoctrine\Traits\SoftDeletes', class_uses($entity));
     }
 }
